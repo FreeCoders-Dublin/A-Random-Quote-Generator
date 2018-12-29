@@ -27,7 +27,6 @@ let quotes = [
   {
     quote: "A man's got to take a lot of punishment to write a really funny book",
     source: "Ernest Hemingway",
-    citation: "Letter",
     year: 1924,
     tags: ""
   },
@@ -49,7 +48,6 @@ let quotes = [
     quote: "A los niños nadie les enseña algunas cosas indispensables, como arreglar una llave que gotea, sobornar a un funcionario o cortarle el pelo al perro",
     source: "Isabel Allende",
     citation: "Caracas",
-    year: "",
     tags: ""
   }
 ];
@@ -75,7 +73,16 @@ let getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
-
+let printQuote = () => { // call function directly as args
+  let selectedQuote = getRandomQuote();
+  let contentHtml = `
+    <p class="quote"> ${selectedQuote.quote} </p>
+    <p class="source">${selectedQuote.source}
+      ${ selectedQuote.citation ? `<span class="citation">${selectedQuote.citation}</span>` : "" }
+      ${ selectedQuote.year ? `<span class="year">${selectedQuote.year}</span>` : "" }
+    </p>`;
+  document.querySelector('#quote-box').innerHTML = contentHtml;
+}
 
 
 /***
