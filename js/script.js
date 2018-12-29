@@ -5,7 +5,7 @@ Author: Luca Tardito
 ******************************************/
 
 // it contains objects of quotetions with required properties (quote and source)
-let quotes = [
+let quotes = [ 
   {
     quote: "Debajo de tu piel vive la luna",
     source: "Pablo Neruda",
