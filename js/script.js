@@ -4,8 +4,7 @@ FSJS project 1 - A Random Quote Generator
 Author: Luca Tardito
 ******************************************/
 
-// quotes it contains objects of quotetions with required properties (quote and source)
-
+// it contains objects of quotetions with required properties (quote and source)
 let quotes = [
   {
     quote: "Debajo de tu piel vive la luna",
@@ -39,14 +38,13 @@ let quotes = [
   }
 ];
 
-// the getRandomQuote returns a quote object random selected.
-
+// it returns a quote object random selected.
 let getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
 // it injects the Html content inside #quote-box
-
-let printQuote = () => { // call function directly as args
+let printQuote = () => {
   let selectedQuote = getRandomQuote();
+  changeColorBg();
   let contentHtml = `
     <p class="quote"> ${selectedQuote.quote} </p>
     <p class="source">${selectedQuote.source}
@@ -56,13 +54,12 @@ let printQuote = () => { // call function directly as args
   document.querySelector('#quote-box').innerHTML = contentHtml;
 }
 
+// it changes the color based on a random string decoded on 16.
+let changeColorBg = () => {
+  let colorSelected = "#"+((1<<24)*Math.random()|0).toString(16);
+  document.body.style.backgroundColor = colorSelected;
+}
 
 // start point and button function
-
 document.addEventListener("DOMContentLoaded", printQuote, false);
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-// var scene = document.getElementById('scene');
-// var parallaxInstance = new Parallax(scene,{
-//   relativeInput: true
-// });
