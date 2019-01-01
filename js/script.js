@@ -94,11 +94,9 @@ NOTE: To fully randomize, simply copy & paste 0123456789ABCDEF inside the variab
 function getRandomColor() {
 	var hexValues = "1234";
 	var color = "#";
-	
 	for (var i = 0; i < 3; i++) {
 		color += hexValues[Math.floor(Math.random() * hexValues.length)];
 	}
-	
 	return color;
 }
 
