@@ -117,8 +117,7 @@ function printQuote () {
 		}
 	}
 	message += "</p>";
-	document.getElementById("quote-box")
-	.innerHTML = message;
+	document.getElementById("quote-box").innerHTML = message;
 	document.body.style.background = getRandomColor();
 	refreshQuote = setTimeout(printQuote, 10000);
 	return randomQuote;
