@@ -3,7 +3,7 @@ Treehouse Techdegree:
 FSJS project 1 - A Random Quote Generator
 Author: Luca Tardito
 ******************************************/
-
+  
 // it contains objects of quotetions with required properties (quote and source)
 let quotes = [ 
   {
