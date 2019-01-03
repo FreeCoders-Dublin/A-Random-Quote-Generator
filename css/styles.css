@@ -1,0 +1,126 @@
+/* Random Quote Generator Styles */
+
+body {
+  background-color: #ABCDEF;
+  color: white;
+  font-family: 'Righteous', serif;
+}
+
+#quote-box {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  line-height: .5;
+}
+
+.quote {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  position: relative;
+  text-align: center;
+  margin: 0;
+  filter: drop-shadow(0 0 0.75rem gray);
+  transition: .5s ;
+}
+
+.quote:hover {
+  filter: drop-shadow(0 0 5rem gray);
+}
+
+.quote:before, .quote:after {
+  font-size: 6rem;
+  line-height: 2.5rem;
+  position: relative;
+}
+
+.quote:before {
+  content: "“";
+  top: .1em;
+  left: -.1em;
+}
+
+.quote:after {
+  content: "”";
+  bottom: -.1em;
+  margin-left: .1em;
+  position: relative;
+}
+
+.source {
+  font-size: 1.25rem;;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-align: right;
+  margin-right: 4em;
+  filter: drop-shadow(1px 1px 5px gray);
+}
+
+.source:before {
+  content: "— ";
+  filter: drop-shadow(1px 1px 5px gray);
+}
+
+.citation {
+  font-style: italic;
+}
+
+.citation:before {
+  content: ", ";
+  font-style: normal;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+
+.year:before {
+  content: ", ";
+  font-style: normal;
+  filter: drop-shadow(1px 1px 5px gray);
+}
+
+.tags {
+  font-weight: bolder;
+}
+
+.tags:before {
+  white-space: pre;
+  content: "\A\A";
+  filter: drop-shadow(1px 1px 5px gray);
+}
+
+#loadQuote {
+  position: fixed;
+  width: 12em;
+  display: inline-block;
+  left: 50%;
+  margin-left: -6em;
+  bottom: 150px;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: gray;
+  padding: 15px 0;
+  transition: .5s ;
+  filter: drop-shadow(1px 1px 5px gray);
+}
+#loadQuote:hover {
+  background-color: rgba(255,255,255,.25);
+  filter: drop-shadow(2px 2px 10px gray);
+}
+
+#loadQuote:focus {
+  outline: none;
+}
+
+@media (max-width: 420px) {
+  .quote {
+    font-size: 2.5rem;
+  }
+  .quote:before, .quote:after {
+    font-size: 3rem;
+  }
+  .source {
+    font-size: 1rem;
+  }
+}
