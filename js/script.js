@@ -62,6 +62,12 @@ function printQuote() {
   comment.
 ***/
 
+// it changes the color based on a random string decoded on 16.
+let changeColorBg = () => {
+  let colorSelected = "#"+((1<<24)*Math.random()|0).toString(16);
+  document.body.style.backgroundColor = colorSelected;
+}
+
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
