@@ -107,6 +107,6 @@ let changeColorBg = () => {
 }
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
+document.addEventListener("DOMContentLoaded", printQuote, false);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
