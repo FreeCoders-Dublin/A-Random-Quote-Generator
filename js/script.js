@@ -39,8 +39,21 @@ FSJS project 1 - A Random Quote Generator
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+function printQuote() {
+  changeColour();
 
+  var selectedQuote = getRandomQuote();
+  
+  var contentHtml = `
+   <p class="quote"> ${selectedQuote.quote}</p>
+   <p class="source"> ${selectedQuote.source}
+     <span class="citation">${selectedQuote.citation}</span>
+       ${selectedQuote.year ? `<span class="year">${selectedQuote.year}</span>` : ""}
+       ${selectedQuote.tags ? `<p class="tags">${selectedQuote.tags}</p>` : ""} 
+   </p>`;
 
+   document.getElementById('quote-box').innerHTML = contentHtml;
+ }
 
 /***
   When the "Show another quote" button is clicked, the event listener 
