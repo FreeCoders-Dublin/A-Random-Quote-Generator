@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Title
 
 One Paragraph of project description goes here
@@ -85,3 +86,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
+=======
+# A-Random-Quote-Generator
+first project
+>>>>>>> ad09e29446d17f84ca035b85dd304048392ad352
