@@ -40,7 +40,7 @@ FSJS project 1 - A Random Quote Generator
 ***/
 
 function printQuote() {
-  changeColour();
+  changeColorBg();
 
   var selectedQuote = getRandomQuote();
   
