@@ -101,3 +101,38 @@ body {
     font-size: 1rem;
   }
 }
+
+
+/*animazione testo */
+.text-animation {
+	-webkit-animation: text-animation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: text-animation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes text-animation {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes text-animation {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
