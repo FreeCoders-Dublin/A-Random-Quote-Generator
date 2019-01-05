@@ -34,18 +34,20 @@ var quotes = [
   }
 ]
 
+var selectedQuote;
 
 
 //Created the `getRandomQuote` function to:
 // - generate a random number
 // - use the random number to `return` a random quote object from the`quotes` array.
 
-function getRandomQuote(list) {
-    //generate a random number
-  var randomNumber = Math.floor(Math.random() * list.length);
-    //get a random quote object from the array
-   return list[randomNumber];
-
+function getRandomQuote() {
+    //generate a random quote that is different from the one printed previously
+    do {
+      var newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    } while (newQuote === selectedQuote);
+    
+   return newQuote;
 }
 
 
@@ -58,7 +60,7 @@ function getRandomQuote(list) {
 function printQuote() {
   changeColorBg();
 
-  var selectedQuote = getRandomQuote(quotes);
+  var selectedQuote = getRandomQuote();
 
   var contentHtml = `
    <p class="quote"> ${selectedQuote.quote}</p>
@@ -69,6 +71,8 @@ function printQuote() {
    </p>`;
 
    document.getElementById('quote-box').innerHTML = contentHtml;
+
+   return selectedQuote;
  }
 
 
@@ -83,4 +87,3 @@ let changeColorBg = () => {
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 document.addEventListener("DOMContentLoaded", printQuote, false);
-
