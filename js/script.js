@@ -42,7 +42,7 @@ var quotes = [
 
 function getRandomQuote(list) {
     //generate a random number
-   randomNumber = Math.floor(Math.random() * list.length);
+  var randomNumber = Math.floor(Math.random() * list.length);
     //get a random quote object from the array
    return list[randomNumber];
 
@@ -58,7 +58,7 @@ function getRandomQuote(list) {
 function printQuote() {
   changeColorBg();
 
-  var selectedQuote = getRandomQuote();
+  var selectedQuote = getRandomQuote(quotes);
 
   var contentHtml = `
    <p class="quote"> ${selectedQuote.quote}</p>
