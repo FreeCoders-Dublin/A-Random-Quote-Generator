@@ -31,6 +31,11 @@ var quotes = [
     quote: "A los niños nadie les enseña algunas cosas indispensables, como arreglar una llave que gotea, sobornar a un funcionario o cortarle el pelo al perro",
     source: "Isabel Allende",
     citation: "Caracas"
+  },
+  {
+    quote: "Non mi avrete mai!",
+    source: "Giovanni Pezzotti",
+    citation: "Identity theft"
   }
 ]
 
