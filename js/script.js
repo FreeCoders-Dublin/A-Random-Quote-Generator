@@ -35,6 +35,7 @@ var quotes = [
 ]
 
 var selectedQuote;
+var refreshQuote;
 
 
 //Created the `getRandomQuote` function to:
@@ -46,7 +47,7 @@ function getRandomQuote() {
     do {
       var newQuote = quotes[Math.floor(Math.random() * quotes.length)];
     } while (newQuote === selectedQuote);
-    
+
    return newQuote;
 }
 
@@ -60,6 +61,8 @@ function getRandomQuote() {
 function printQuote() {
   changeColorBg();
 
+  clearTimeout(refreshQuote);
+
   var selectedQuote = getRandomQuote();
 
   var contentHtml = `
@@ -71,6 +74,8 @@ function printQuote() {
    </p>`;
 
    document.getElementById('quote-box').innerHTML = contentHtml;
+
+   refreshQuote = setTimeout(printQuote, 10000);
 
    return selectedQuote;
  }
