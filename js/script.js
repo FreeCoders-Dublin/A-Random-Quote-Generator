@@ -31,6 +31,11 @@ var quotes = [
     quote: "A los niños nadie les enseña algunas cosas indispensables, como arreglar una llave que gotea, sobornar a un funcionario o cortarle el pelo al perro",
     source: "Isabel Allende",
     citation: "Caracas"
+  },
+  {
+    quote: "Non mi avrete mai!",
+    source: "Giovanni Pezzotti",
+    citation: "Identity theft"
   }
 ]
 
@@ -66,11 +71,11 @@ function printQuote() {
   var selectedQuote = getRandomQuote();
 
   var contentHtml = `
-   <p class="quote"> ${selectedQuote.quote}</p>
-   <p class="source"> ${selectedQuote.source}
-     <span class="citation">${selectedQuote.citation}</span>
-       ${selectedQuote.year ? `<span class="year">${selectedQuote.year}</span>` : ""}
-       ${selectedQuote.tags ? `<p class="tags">${selectedQuote.tags}</p>` : ""}
+   <p class="quote text-animation"> ${selectedQuote.quote}</p>
+   <p class="source text-animation"> ${selectedQuote.source}
+     <span class="citation text-animation">${selectedQuote.citation}</span>
+       ${selectedQuote.year ? `<span class="year text-animation">${selectedQuote.year}</span>` : ""}
+       ${selectedQuote.tags ? `<p class="tags text-animation">${selectedQuote.tags}</p>` : ""}
    </p>`;
 
    document.getElementById('quote-box').innerHTML = contentHtml;
