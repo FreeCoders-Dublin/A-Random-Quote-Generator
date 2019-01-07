@@ -74,7 +74,11 @@ var message;
 
 /***
 QUOTE RANDOMIZER
-The do while loop was added as a way to avoid the quote to be repeated when pressing the button. Since randomQuote is returned from the function, 
+<<<<<<< HEAD
+The do while loop was added as a way to avoid the quote to be repeated when pressing the button. Since randomQuote is returned from the function,
+=======
+The do while loop was added as a way to avoid the quote to be repeated when pressing the button. Since randomQuote is returned from the function,
+>>>>>>> f665f4407bcbac3350b08c82cd67edd0a7c7d0ff
 we can compare it with newQuote until they are different.
 ***/
 function getRandomQuote () {
@@ -117,8 +121,7 @@ function printQuote () {
 		}
 	}
 	message += "</p>";
-	document.getElementById("quote-box")
-	.innerHTML = message;
+	document.getElementById("quote-box").innerHTML = message;
 	document.body.style.background = getRandomColor();
 	refreshQuote = setTimeout(printQuote, 10000);
 	return randomQuote;
