@@ -77,7 +77,11 @@ QUOTE RANDOMIZER
 <<<<<<< HEAD
 The do while loop was added as a way to avoid the quote to be repeated when pressing the button. Since randomQuote is returned from the function,
 =======
+<<<<<<< HEAD
 The do while loop was added as a way to avoid the quote to be repeated when pressing the button. Since randomQuote is returned from the function,
+=======
+The do while loop was added as a way to avoid the quote to be repeated when pressing the button. Since randomQuote is returned from the function, 
+>>>>>>> 52e243f84678fffa3199bc3fbe44dc6bad864dd0
 >>>>>>> f665f4407bcbac3350b08c82cd67edd0a7c7d0ff
 we can compare it with newQuote until they are different.
 ***/
@@ -96,11 +100,21 @@ to make them all fit a certain narrower color range that looks more aestheticall
 NOTE: To fully randomize, simply copy & paste 0123456789ABCDEF inside the variable and put i < 6 in the for loop to use the longer six digit version.
 ***/
 function getRandomColor() {
+<<<<<<< HEAD
+	// var hexValues = 255;
+
+var color = "rgb(";
+color += (Math.floor(Math.random() * 255)) + ', ';
+color += (Math.floor(Math.random() * 255)) + ', ';
+color += Math.floor(Math.random() * 255);
+color += ')';
+=======
 	var hexValues = "1234";
 	var color = "#";
 	for (var i = 0; i < 3; i++) {
 		color += hexValues[Math.floor(Math.random() * hexValues.length)];
 	}
+>>>>>>> f665f4407bcbac3350b08c82cd67edd0a7c7d0ff
 	return color;
 }
 
