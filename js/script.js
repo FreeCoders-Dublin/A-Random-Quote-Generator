@@ -40,6 +40,8 @@ var quotes = [
 ]
 // This global variable will store the printed quote to be compared with a new quote in the getRandomQuote function.
 var selectedQuote;
+// This variable will hold the timeOut.
+var refreshQuote;
 
 
 //Created the `getRandomQuote` function to:
@@ -67,7 +69,6 @@ function printQuote() {
   changeColorBg();
 
   // the timeout refreshes at the beginning of the function.
-  var refreshQuote;
   clearTimeout(refreshQuote);
 
   // a new random quote will be returned every time.
