@@ -38,9 +38,8 @@ var quotes = [
     citation: "Identity theft"
   }
 ]
-
+// This global variable will store the printed quote to be compared with a new quote in the getRandomQuote function.
 var selectedQuote;
-var refreshQuote;
 
 
 //Created the `getRandomQuote` function to:
@@ -48,7 +47,7 @@ var refreshQuote;
 // - use the random number to `return` a random quote object from the`quotes` array.
 
 function getRandomQuote() {
-    //generate a random quote that is different from the one printed previously
+    // loop that ensures a new quote every time the function runs
     do {
       var newQuote = quotes[Math.floor(Math.random() * quotes.length)];
     } while (newQuote === selectedQuote);
@@ -58,18 +57,23 @@ function getRandomQuote() {
 
 
 
-
 //Create the `printQuote` function to:
 //   - call the `getRandomQuote` function and assign it to a variable.
 //  - use the properties of the quote object stored in the variable to create HTML string.
 
 function printQuote() {
+
+  // will randomize backgroundColor
   changeColorBg();
 
+  // the timeout refreshes at the beginning of the function.
+  var refreshQuote;
   clearTimeout(refreshQuote);
 
-  var selectedQuote = getRandomQuote();
+  // a new random quote will be returned every time.
+  selectedQuote = getRandomQuote();
 
+  // this adds the html tags. We used ES6 template literals for a cleaner look.
   var contentHtml = `
    <p class="quote text-animation"> ${selectedQuote.quote}</p>
    <p class="source text-animation"> ${selectedQuote.source}
@@ -78,8 +82,10 @@ function printQuote() {
        ${selectedQuote.tags ? `<p class="tags text-animation">${selectedQuote.tags}</p>` : ""}
    </p>`;
 
+   // this prints the quote
    document.getElementById('quote-box').innerHTML = contentHtml;
 
+   // the quote refreshes automatically every 10 seconds if the user doesn't press the button.
    refreshQuote = setTimeout(printQuote, 10000);
 
    return selectedQuote;
@@ -87,8 +93,8 @@ function printQuote() {
 
 
 // it changes the color based on a random string decoded on 16.
-let changeColorBg = () => {
-  let colorSelected = "#"+((1<<24)*Math.random()|0).toString(16);
+var changeColorBg = () => {
+  var colorSelected = "#"+((1<<24)*Math.random()|0).toString(16);
   document.body.style.backgroundColor = colorSelected;
 }
 
